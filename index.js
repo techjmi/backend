@@ -3,7 +3,7 @@ const express= require("express")
 const mongoDB = require("./database/db")
 const Router= require("./router/router")
 const app= express()
-const PORT=8000
+const PORT=process.env.PORT||8000
 const cors= require("cors")
 // const corsOption={
 //     origin:"http://localhost:3000",
