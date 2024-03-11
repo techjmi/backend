@@ -8,6 +8,7 @@ const {PostData ,FetchPost, FetchPostById, FetchUserPost}= require("../controlle
 const { UpdatePost, DeletePost } = require("../controller/updateController");
 const {PostComment, fetchComments} = require("../controller/commentController");
 const PostLike = require("../controller/likecontroller");
+const { PostRating, GetTotalRatings } = require("../controller/RatingController");
 const router= express.Router()
 router.route("/signup").post(signup)
 router.route("/login").post(login)
@@ -27,5 +28,7 @@ router.route("/userpost/:id").get(FetchUserPost)
   router.route("/getcomment/:id").get(fetchComments)
   //route for like
   router.route("/like").post(PostLike) 
+  router.route("/rating/:id").post(PostRating)
+  router.route("/total_rating/:id").get(GetTotalRatings)
   // router.route("/getlike").get(fetchLike)
 module.exports =router 
